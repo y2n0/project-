@@ -1,0 +1,193 @@
+/* === إعدادات أساسية === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #ffb03a;
+  --bg: #fffdf8;
+  --text: #333;
+  --dark-bg: #1b1b1b;
+  --dark-text: #fff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  background-color: var(--primary);
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 600;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* === Header === */
+header {
+  background-color: var(--bg);
+  padding: 20px 50px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.auth-buttons a {
+  margin-left: 20px;
+}
+
+/* 🔘 زر الموبايل */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* === Sections === */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--primary);
+  color: #fff;
+}
+
+.hero span {
+  background: var(--dark-bg);
+  color: var(--primary);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.features, .getting-started, .mobile-app {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.popular-courses {
+  background: var(--dark-bg);
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.popular-courses span {
+  color: var(--primary);
+}
+
+/* === Footer === */
+footer {
+  background: var(--dark-bg);
+  color: #fff;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-columns ul {
+  list-style: none;
+}
+
+/* === Controls (دارك مود + ألوان) === */
+.controls {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+#modeToggle {
+  background: var(--primary);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.colors span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 5px;
+}
+
+/* === Dark Mode === */
+body.dark {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+body.dark header,
+body.dark .hero,
+body.dark footer {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+body.dark .popular-courses {
+  background: #000;
+}
+
+/* === Responsive === */
+@media screen and (max-width:850px){
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--bg);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}
